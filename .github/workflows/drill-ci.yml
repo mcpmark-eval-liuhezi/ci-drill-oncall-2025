@@ -1,0 +1,15 @@
+name: Drill CI
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  drill-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deliberate failure to simulate broken build
+        run: |
+          echo "::group::Drill CI step - this build is expected to fail on purpose"
+          echo "Reproducing a red CI run for the on-call drill."
+          exit 1
